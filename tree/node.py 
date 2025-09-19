@@ -1,0 +1,33 @@
+from abc import ABC, abstractmethod
+
+class Node(ABC):
+
+    def __init__(self, feature_):
+        self.feature = feature_
+        self.left = None
+        self.right = None
+        self.predicted = None
+
+    @abstractmethod
+    def calc_split(self):
+        pass
+
+
+class TreeNode(Node):
+
+    def __init__(self, feature_):
+        super().__init__(feature_)
+
+    def calc_split(self):
+        pass
+
+class ChildNode(Node):
+
+    def __init__(self, predicted_value):
+        super().__init__(None) # Child nodes don't split on features
+        self.predicted = predicted_value
+
+    def calc_split(self):
+        pass # Child nodes do not perform splits
+ƒs
+    
