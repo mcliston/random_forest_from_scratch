@@ -6,6 +6,7 @@ class Node(ABC):
         self.feature = feature_
         self.left = None
         self.right = None
+        self.threshold = None
         self.predicted = None
 
     @abstractmethod
